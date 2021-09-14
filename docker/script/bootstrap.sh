@@ -37,6 +37,8 @@ pip3 install $PIP_OPTION apache-airflow-providers-docker==1.2.0
 pip3 install $PIP_OPTION apache-airflow-providers-oracle==1.1.0
 pip3 install $PIP_OPTION apache-airflow-providers-presto==1.0.2
 pip3 install $PIP_OPTION apache-airflow-providers-sftp==1.2.0
+pip3 install $PIP_OPTION apache-airflow-providers-mysql
+pip3 install $PIP_OPTION apache-airflow-providers-microsoft-mssql
 
 # Install default providers
 pip3 install --constraint /constraints.txt apache-airflow-providers-amazon
