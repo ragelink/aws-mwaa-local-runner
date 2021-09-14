@@ -31,16 +31,16 @@ dag = DAG(
 
 # [START howto_operator_mysql]
 
-create_table_mysql_task = MySqlOperator (
-    task_id='create_table_mysql' mysql_conn_id='mysql_leo', sql=r"""CREATE TABLE IF NOT EXISTS tasks (
-    task_id INT AUTO_INCREMENT,
-    title VARCHAR(255) NOT NULL,
-    start_date DATE,
-    due_date DATE,
-    priority TINYINT NOT NULL DEFAULT 3,
-    description TEXT,
-    PRIMARY KEY (task_id));""", dag=dag
-)
+#create_table_mysql_task = MySqlOperator (
+#    task_id='create_table_mysql' mysql_conn_id='mysql_leo', sql=r"""CREATE TABLE IF NOT EXISTS tasks (
+#    task_id INT AUTO_INCREMENT,
+#    title VARCHAR(255) NOT NULL,
+#    start_date DATE,
+#    due_date DATE,
+#    priority TINYINT NOT NULL DEFAULT 3,
+#    description TEXT,
+#    PRIMARY KEY (task_id));""", dag=dag
+#)
 
 drop_table_mysql_task = MySqlOperator(
     task_id='drop_table_mysql', mysql_conn_id='mysql_leo', sql=r"""INSERT INTO tasks(title,priority) 
@@ -60,6 +60,6 @@ mysql_task = MySqlOperator(
 )
 
 # [END howto_operator_mysql_external_file]
-create_table_mysql_task >> mysql_task
+#create_table_mysql_task >> mysql_task
 
 drop_table_mysql_task >> mysql_task
